@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dine-Ease - Best Restaurants Menu</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #fff8f0;
+        color: #333;
+    }
+    header {
+        background-color: #ff7043;
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    header h1 { font-size: 3rem; margin: 0; }
+    header p { font-size: 1.2rem; margin-top: 10px; }
+
+    section.restaurant {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    section.restaurant h2 {
+        font-size: 2rem;
+        color: #d84315;
+        border-bottom: 2px solid #ff7043;
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .menu-card {
+        background-color: #fff3e0;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+    .menu-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .menu-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    .menu-card:hover img {
+        transform: scale(1.05);
+    }
+    .menu-info {
+        padding: 20px;
+        text-align: center;
+    }
+    .menu-info h3 {
+        margin: 0 0 10px;
+        color: #bf360c;
+        font-size: 1.4rem;
+    }
+    .menu-info p { margin: 0 0 15px; font-size: 0.95rem; }
+    .menu-info span { font-weight: bold; color: #ff5722; font-size: 1.1rem; }
+
+    @media(max-width: 600px){
+        header h1 { font-size: 2rem; }
+        .menu-info h3 { font-size: 1.2rem; }
+    }
+
+ .menu-card button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(45deg, #ff7043, #ff5722);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-card button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #e64a19, #d84315);
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Dine-Ease</h1>
+    <p>Best Restaurant Recommendations in Ahmedabad & Gandhinagar</p>
+</header>
+
+<!-- Ahmedabad - Barbeque Nation -->
+<section class="restaurant">
+<h2>Ahmedabad - Barbeque Nation</h2>
+<div class="menu-grid">
+    <div class="menu-card">
+        <img src="m1.jpg" alt="Italian Pasta">
+        <div class="menu-info">
+            <h3>Italian Pasta</h3>
+            <p>Rich tomato sauce pasta with fresh herbs.</p>
+            <span>₹999</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m2.jpg" alt="Veggie Burger">
+        <div class="menu-info">
+            <h3>Veggie Burger</h3>
+            <p>Grilled veggie patty with fresh lettuce and tomato.</p>
+            <span>₹849</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m3.jpg" alt="Grilled Paneer Tikka">
+        <div class="menu-info">
+            <h3>Grilled Paneer Tikka</h3>
+            <p>Spicy paneer skewers for starters.</p>
+            <span>₹599</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m4.jpg" alt="Garlic Bread">
+        <div class="menu-info">
+            <h3>Garlic Bread</h3>
+            <p>Crispy garlic flavored bread.</p>
+            <span>₹299</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m5.jpg" alt="Chicken Seekh Kebab">
+        <div class="menu-info">
+            <h3>Chicken Seekh Kebab</h3>
+            <p>Tender spiced chicken skewers.</p>
+            <span>₹699</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <!-- New Items -->
+    <div class="menu-card">
+        <img src="m6.jpg" alt="Mushroom Masala">
+        <div class="menu-info">
+            <h3>Mushroom Masala</h3>
+            <p>Spicy mushroom curry.</p>
+            <span>₹549</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m7.jpg" alt="Paneer Pizza">
+        <div class="menu-info">
+            <h3>Paneer Pizza</h3>
+            <p>Cheesy paneer topping on pizza base.</p>
+            <span>₹699</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m8.jpg" alt="Cold Coffee">
+        <div class="menu-info">
+            <h3>Cold Coffee</h3>
+            <p>Refreshing iced coffee drink.</p>
+            <span>₹199</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Ahmedabad - Cafe Alfresco -->
+<section class="restaurant">
+<h2>Ahmedabad - Cafe Alfresco</h2>
+<div class="menu-grid">
+    <div class="menu-card">
+        <img src="m9.jpg" alt="Fresh Salad">
+        <div class="menu-info">
+            <h3>Fresh Fruits Salad</h3>
+            <p>Healthy with tangy dressing.</p>
+            <span>₹499</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m10.jpg" alt="Tomato Soup">
+        <div class="menu-info">
+            <h3>Tomato Soup</h3>
+            <p>Warm and comforting classic soup.</p>
+            <span>₹399</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m11.jpg" alt="Veg Sandwich">
+        <div class="menu-info">
+            <h3>Veg Sandwich</h3>
+            <p>Fresh veggies in multigrain bread.</p>
+            <span>₹349</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m12.jpg" alt="Pasta Alfredo">
+        <div class="menu-info">
+            <h3>Pasta Alfredo</h3>
+            <p>Creamy pasta with cheese.</p>
+            <span>₹899</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m13.jpg" alt="Masala Chai">
+        <div class="menu-info">
+            <h3>Masala Chai</h3>
+            <p>Indian spiced tea.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <!-- New Items -->
+    <div class="menu-card">
+        <img src="m14.jpg" alt="Veg Burger">
+        <div class="menu-info">
+            <h3>Veg Burger</h3>
+            <p>Soft bun with veggie patty.</p>
+            <span>₹399</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m15.jpg" alt="Cheese Garlic Toast">
+        <div class="menu-info">
+            <h3>Cheese Garlic Toast</h3>
+            <p>Crunchy toasted bread with cheese.</p>
+            <span>₹299</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m16.jpg" alt="Lemon Iced Tea">
+        <div class="menu-info">
+            <h3>Lemon Iced Tea</h3>
+            <p>Fresh lemon-flavored iced tea.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Ahmedabad - Rajwadu -->
+<section class="restaurant">
+<h2>Ahmedabad - Rajwadu</h2>
+<div class="menu-grid">
+    <div class="menu-card">
+        <img src="m17.jpg" alt="Dal Dhokli">
+        <div class="menu-info">
+            <h3>Dal Dhokli</h3>
+            <p>Gujarati comfort food.</p>
+            <span>₹399</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m18.jpg" alt="Undhiyu">
+        <div class="menu-info">
+            <h3>Undhiyu</h3>
+            <p>Mixed vegetable delicacy.</p>
+            <span>₹599</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m19.jpg" alt="Khakhra">
+        <div class="menu-info">
+            <h3>Khakhra</h3>
+            <p>Crispy flatbread.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m20.jpg" alt="Fafda Jalebi">
+        <div class="menu-info">
+            <h3>Fafda Jalebi</h3>
+            <p>Snack combo.</p>
+            <span>₹199</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m21.jpg" alt="Handvo">
+        <div class="menu-info">
+            <h3>Handvo</h3>
+            <p>Savory lentil cake.</p>
+            <span>₹249</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <!-- New Items -->
+    <div class="menu-card">
+        <img src="m22.jpg" alt="Khandvi">
+        <div class="menu-info">
+            <h3>Khandvi</h3>
+            <p>Rolled gram flour snack.</p>
+            <span>₹199</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m23.jpg" alt="Dhokla">
+        <div class="menu-info">
+            <h3>Dhokla</h3>
+            <p>Soft steamed snack.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    <div class="menu-card">
+        <img src="m24.jpg" alt="Thepla">
+        <div class="menu-info">
+            <h3>Thepla</h3>
+            <p>Spiced flatbread.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Ahmedabad - Triton Cafe -->
+<section class="restaurant">
+<h2>Ahmedabad - Triton Cafe</h2>
+<div class="menu-grid">
+
+    <div class="menu-card">
+        <img src="a1.jpeg" alt="Pasta">
+        <div class="menu-info">
+            <h3>Pasta</h3>
+            <p>Creamy Italian pasta with rich sauce.</p>
+            <span>₹499</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a2.jpg" alt="Falafel">
+        <div class="menu-info">
+            <h3>Falafel</h3>
+            <p>Crispy chickpea balls with herbs.</p>
+            <span>₹399</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a3.jpg" alt="Oreo Shake">
+        <div class="menu-info">
+            <h3>Oreo Shake</h3>
+            <p>Chocolatey Oreo blended milkshake.</p>
+            <span>₹299</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a4.jpg" alt="Pizza">
+        <div class="menu-info">
+            <h3>Pizza</h3>
+            <p>Classic cheesy delight with toppings.</p>
+            <span>₹599</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a5.jpg" alt="Mojito">
+        <div class="menu-info">
+            <h3>Mojito</h3>
+            <p>Refreshing mint and lime cooler.</p>
+            <span>₹199</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a6.jpg" alt="Noodles">
+        <div class="menu-info">
+            <h3>Noodles</h3>
+            <p>Stir-fried noodles with veggies.</p>
+            <span>₹349</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a7.jpg" alt="Garlic Bread">
+        <div class="menu-info">
+            <h3>Garlic Bread</h3>
+            <p>Toasted bread with garlic butter.</p>
+            <span>₹249</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+    
+      <div class="menu-card">
+        <img src="a0.jpg" alt="French Fries">
+        <div class="menu-info">
+            <h3>French Fries</h3>
+            <p>Crispy salted potato fries.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+</div>
+</section>
+   
+
+
+<!-- Ahmedabad - Leela Hotel -->
+<section class="restaurant">
+<h2>Ahmedabad - Leela Hotel</h2>
+<div class="menu-grid">
+
+    <div class="menu-card">
+        <img src="a8.jpg" alt="Dosa">
+        <div class="menu-info">
+            <h3>Dosa</h3>
+            <p>Crispy South Indian rice crepe.</p>
+            <span>₹299</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a9.jpg" alt="Waffle">
+        <div class="menu-info">
+            <h3>Waffle</h3>
+            <p>Sweet crispy waffle with toppings.</p>
+            <span>₹399</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a10.jpg" alt="Dal Bati">
+        <div class="menu-info">
+            <h3>Dal Bati</h3>
+            <p>Traditional Rajasthani dish.</p>
+            <span>₹499</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a11.jpg" alt="Paneer Butter Masala">
+        <div class="menu-info">
+            <h3>Paneer Butter Masala</h3>
+            <p>Rich creamy paneer curry.</p>
+            <span>₹599</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a12.jpg" alt="Tandoori Roti">
+        <div class="menu-info">
+            <h3>Tandoori Roti</h3>
+            <p>Clay oven baked Indian bread.</p>
+            <span>₹49</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a13.jpg" alt="Kala Jamun">
+        <div class="menu-info">
+            <h3>Kala Jamun</h3>
+            <p>Sweet syrupy dessert balls.</p>
+            <span>₹149</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+    <div class="menu-card">
+        <img src="a14.jpg" alt="Lassi">
+        <div class="menu-info">
+            <h3>Lassi</h3>
+            <p>Refreshing yogurt-based drink.</p>
+            <span>₹199</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+     <div class="menu-card">
+        <img src="a15.jpg" alt="Spring Roll">
+        <div class="menu-info">
+            <h3>Spring Roll</h3>
+            <p>Crunchy rolls filled with veggies.</p>
+            <span>₹199</span>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+    </div>
+
+</div>
+</section>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dine-Ease | Your Food Recommendation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: #ffd700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        .food-icons {
+            margin-top: 20px;
+            font-size: 2rem;
+            animation: float 3s infinite alternate;
+        }
+  
+        #bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+    </style>
+</head>
+<body>
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+</video>
+    <div class="container">
+        <h1>Welcome to <span>Dine-Ease</span></h1>
+        <p>Your Smart Food Ordering App 🍕🍔🍜</p>
+
+        <!-- Get Started button -->
+        <a href="review.html" class="btn btn-primary">Reviews</a>
+
+        <!-- Explore Menu button (fixed) -->
+        <a href="new.html" class="btn btn-primary">Explore Menu</a>
+
+        <div class="food-icons">
+            🍕 🍔 🍟 🍜 🍩
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dine Ease Intro</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #ffb347);
+    color: white;
+    text-align: center;
+}
+
+/* Main Section */
+.container {
+    padding: 60px 20px;
+    animation: fadeIn 2s ease;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* allows responsive wrap */
+    margin-top: 20px;
+}
+
+.review {
+    width: 250px;
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease;
+}
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Reviews */
+.review {
+    margin: 20px auto;
+    width: 300px;
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease;
+}
+
+.stars {
+    color: gold;
+    font-size: 20px;
+}
+
+/* Back Button */
+.back-btn {
+    margin-top: 40px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #ffe0e0;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🍽️ Dine Ease</h1>
+    <p>Welcome to Dine Ease – your personal food advisor to find the perfect meal anytime!</p>
+
+
+ <!-- Features --> 
+      <h2>✨ Our Features</h2> 
+      <div class="card-container"> 
+        <div class="card">🍴 Personalized Food Suggestions</div>
+         <div class="card">⚡ Fast & Easy to Use</div> 
+         <div class="card">💰 Budget Friendly Options</div>
+          <div class="card">📍 Location Based Results</div>
+     </div>
+     <!-- Reviews -->
+  <h2 style="margin-top:40px;">⭐ Best Reviews</h2>
+
+<div class="review-container">
+
+    <div class="review">
+        <p>"Amazing app! Found best food easily."</p>
+        <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="review">
+        <p>"Very helpful and user-friendly!"</p>
+        <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="review">
+        <p>"I love the food suggestions, saves my time every day."</p>
+        <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="review">
+        <p>"Clean design and very smooth experience!"</p>
+        <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="review">
+        <p>"Perfect for students like me on a budget."</p>
+        <div class="stars">★★★★★</div>
+    </div>
+
+</div>
+    <!-- Go Back Button -->
+<button class="back-btn" id="backBtn">⬅ Go Back</button>
+
+</div>
+
+<script>
+document.getElementById("backBtn").addEventListener("click", function() {
+    window.location.href = "page 1.html"; 
+});
+</script>
+
+</body>
+</html>

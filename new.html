@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dine-Ease | Explore Food</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4e4d8;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo span {
+    color: orange;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* NAV LINKS */
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: orange;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+/* BUTTONS */
+.auth button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.auth button:hover {
+    transform: scale(1.1);
+}
+
+.signup {
+    background: orange;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.explore-btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: orange;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* HERO IMAGE */
+.hero-img img {
+    width: 600px;
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: spin 25s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* MENU GRID */
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    align-items: stretch;
+
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    width: 220px;
+    min-height: 340px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+
+    display: flex;              /* 🔥 IMPORTANT */
+    flex-direction: column;     /* 🔥 IMPORTANT */
+}
+
+
+.menu-item img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.menu-item .price {
+    margin-top: auto;   /* 🔥 pushes price to SAME LINE in all cards */
+    font-weight: 700;
+    color: #ff5722;
+    font-size: 16px;
+    text-align: center;
+}
+
+.menu-item button {
+    margin-top: auto;   /* 🔥 pushes button to bottom */
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(45deg, orange, #ff5722);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-item button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #e64a19, #d84315);
+}
+
+/* SERVICE LIST */
+
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 220px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #555;
+}
+.service-list {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+}
+
+.service-list li {
+    font-size: 16px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.service-list li::before {
+    content: "🍽️";
+    position: absolute;
+    left: -30px;
+}
+
+/* GALLERY GRID */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 200px;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+.footer {
+    background: #222;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer div {
+    margin: 10px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+.gallery-grid img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.08);
+}
+
+#userBox {
+    margin-left: 20px;
+    padding: 8px 15px;
+    background: #fff3e0;
+    border-radius: 20px;
+    font-weight: 500;
+    color: #ff6600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#userBox:hover {
+    background: #ffe0b2;
+    transform: scale(1.05);
+}
+
+#logoutBtn {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: red;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#logoutBtn:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Dine<span>-Ease</span></div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+<a href="#menu">Top-Dishes</a>
+<a href="#service">Service</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+    </div>
+
+    <div class="auth">
+        <button onclick="window.location.href='login.html'">Log In</button>
+        <button class="signup" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+    <div id="userBox"></div>
+<button id="logoutBtn" style="display:none;">Logout</button>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Order Your Best Food Anytime</h1>
+        <p>Hey! Delicious food is waiting for you 🍔 Get personalized recommendations with Dine-Ease.</p>
+        <button onclick="window.location.href='new menu.html'" class="explore-btn">Explore Food</button>
+    </div>
+    <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" alt="Delicious food"/>
+    </div>
+</div>
+</section>
+<!-- MENU SECTION -->
+
+<section id="menu" class="section">
+
+     <h2>Top Dishes</h2>
+    <p>Handcrafted dishes made with love and premium ingredients.</p>
+    <div class="menu-grid">
+
+        <!-- Pizza -->
+        <div class="menu-item">
+            <img src="p1.jpg">
+            <h4>Margherita Pizza</h4>
+            <p>Classic cheese & tomato delight</p>
+            <p class="price">₹299</p>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+
+        <!-- Burger -->
+        <div class="menu-item">
+            <img src="p2.jpg">
+            <h4>Cheese Burger</h4>
+            <p>Loaded with cheese & juicy patty</p>
+            <p class="price">₹199</p>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+
+        <!-- Pasta -->
+        <div class="menu-item">
+            <img src="p3.jpg">
+            <h4>White Sauce Pasta</h4>
+            <p>Creamy & rich Italian pasta</p>
+            <p class="price">₹249</p>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+
+        <!-- Sandwich -->
+        <div class="menu-item">
+        <img src="p4.jpg">
+            <h4>Grilled Sandwich</h4>
+            <p>Crispy grilled with fresh veggies</p>
+            <p class="price">₹149</p>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+
+        <!-- Fries -->
+        <div class="menu-item">
+            <img src="p5.jpg">
+            <h4>French Fries</h4>
+            <p>Golden crispy potato fries</p>
+            <p class="price">₹99</p>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+
+        <!-- Dessert -->
+        <div class="menu-item">
+            <img src="p6.jpg">
+            <h4>Chocolate Cake</h4>
+            <p>Rich & creamy chocolate delight</p>
+            <p class="price">₹179</p>
+            <button onclick="window.open('http://localhost:8501')">Order Now</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICE SECTION -->
+<section id="service" class="section">
+    <h2>Our Services</h2>
+    <p>We deliver more than food — we deliver experience.</p>
+
+    <div class="menu-grid">
+
+        <div class="service-card">
+            <h3>🚀 Fast Delivery</h3>
+            <p>Get your food delivered within 30-45 minutes.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🍽️ Quality Food</h3>
+            <p>Fresh ingredients and hygienic preparation.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🎉 Catering</h3>
+            <p>Perfect catering for parties & events.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>📞 24/7 Support</h3>
+            <p>We’re always here to help you anytime.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🏆 Loyalty Rewards</h3>
+            <p>Earn points and get exciting discounts.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="section">
+    <h2>About Dine-Ease</h2>
+
+    <p>
+        Founded in 2020, <b>Dine-Ease</b> is built with a mission to transform 
+        how people experience food delivery. We combine technology, speed, 
+        and quality to bring restaurant-style meals straight to your doorstep.
+    </p>
+
+    <p>
+        Our chefs craft every dish with precision using fresh, locally sourced ingredients.
+        With thousands of happy customers, we are growing as one of the most trusted 
+        food delivery platforms.
+    </p>
+
+    <p>
+        🍔 <b>1000+ Orders Daily</b> &nbsp; | &nbsp;
+        🚀 <b>Fastest Delivery</b> &nbsp; | &nbsp;
+        ⭐ <b>Top Rated Experience</b>
+    </p>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="section">
+    <h2>Food Gallery</h2>
+    <p>Take a look at our delicious creations.</p>
+
+    <div class="gallery-grid">
+        <img src="f1.jpg">
+        <img src="f2.jpg">
+        <img src="f3.jpg">
+        <img src="f4.jpg">
+        <img src="f5.jpg">
+        <img src="f6.jpg">
+        <img src="f7.jpg">
+        <img src="f8.jpg">
+    </div>
+</section>
+<!-- FOOTER -->
+<div class="footer">
+    <div>
+        <h3>Dine-Ease</h3>
+        <p>Your favorite food delivery partner.</p>
+    </div>
+    <div>
+        <h3>Quick Links</h3>
+        <p><a href="#home" style="color:#ff6600;text-decoration:none;">home</a></p>
+        <p><a href="#menu" style="color:#ff6600;text-decoration:none;">Menu</a></p>
+        <p><a href="#service" style="color:#ff6600;text-decoration:none;">Service</a></p>
+        <p><a href="#about" style="color:#ff6600;text-decoration:none;">About</a></p>
+        <p><a href="#gallery" style="color:#ff6600;text-decoration:none;">Gallery</a></p>
+    </div>
+    <div>
+        <h3>Contact</h3>
+        <p>Email: support@dineease.com</p>
+        <p>Phone: +91 9876543210</p>
+    </div>
+</div>
+
+<script>
+window.onload = function(){
+    let user = JSON.parse(localStorage.getItem("user"));
+    let loggedIn = localStorage.getItem("loggedIn");
+
+    if(loggedIn === "true" && user){
+        document.getElementById("userBox").innerHTML =
+            "👤 " + user.name;
+
+        document.getElementById("logoutBtn").style.display = "inline-block";
+    }
+}
+
+// SMOOTH LOGOUT
+document.getElementById("logoutBtn").onclick = function(){
+
+    // fade out effect
+    document.body.style.transition = "0.5s";
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+        localStorage.removeItem("loggedIn");
+
+        // instead of reload → clean UI update
+        document.getElementById("userBox").innerHTML = "";
+        document.getElementById("logoutBtn").style.display = "none";
+
+        // fade back in
+        document.body.style.opacity = "1";
+    }, 500);
+}
+</script>
+</body>
+</html>
