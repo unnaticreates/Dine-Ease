@@ -16,5 +16,8 @@ Dine Ease is a restaurant management web application developed using HTML, CSS, 
 - Python
 - Streamlit
 
+## Screenshots
+(images here)
+
 ## Developer
 Unnati 
