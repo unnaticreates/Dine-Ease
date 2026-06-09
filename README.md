@@ -29,23 +29,23 @@ The application allows users to browse food menus, explore restaurant offerings,
 ### Welcome Page
 ![Welcome Page](welcome.png)
 
+### Review Section
+![Review Section](reviews.png)
+
 ### explore Page
 ![explore Page](explore.png)
 
 ### Menu Page
 ![Menu Page](menu.png)
 
-### Order Page
-![Order Page](order.png)
-
-### Review Section
-![Review Section](reviews.png)
-
 ### Signup Page
 ![Signup Page](signup.png)
 
 ### login Page
 ![login Page](login.png)
+
+### Order Page
+![Order Page](order.png)
 
 ## 🎯 Learning Outcomes
 
